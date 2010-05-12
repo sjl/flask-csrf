@@ -18,7 +18,7 @@ from setuptools import setup
 
 setup(
     name='flask-csrf',
-    version='0.9.0',
+    version='0.9.1',
     url='http://sjl.bitbucket.org/flask-csrf/',
     license='MIT',
     author='Steve Losh',
