@@ -22,13 +22,13 @@ Installation
 
 Install flask-csrf with `pip`_::
 
-    pip install -e 'hg+http://bitbucket.org/sjl/flash-csrf@v0.9.0#egg=flask-csrf'
+    pip install -e 'hg+http://bitbucket.org/sjl/flask-csrf@v0.9.0#egg=flask-csrf'
 
 Prefer `git`_ to `Mercurial`_?
 
 ::
 
-    pip install -e 'git+http://github.com/sjl/flash-csrf.git@v0.9.0#egg=flask-csrf'
+    pip install -e 'git+http://github.com/sjl/flask-csrf.git@v0.9.0#egg=flask-csrf'
 
 .. _pip: http://pip.openplans.org/
 .. _git: http://git-scm.com/
