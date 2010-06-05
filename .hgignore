@@ -5,3 +5,4 @@ syntax: glob
 _build
 *.swp
 *.egg-info
+dist
