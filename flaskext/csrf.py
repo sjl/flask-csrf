@@ -24,7 +24,7 @@ def csrf(app, on_csrf=None):
     @app.before_request
     def _csrf_check_exemptions():
         try:
-            dest = app.view_functions[app.match_request()[0]]
+            dest = app.view_functions.get(request.endpoint)
             g._csrf_exempt = dest in _exempt_views
         except NotFound:
             g._csrf_exempt = False
