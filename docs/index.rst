@@ -46,7 +46,7 @@ things. First, call the ``csrf`` function with your Flask app as a parameter::
 Once you do that you'll need to add a CSRF token to every form on your site
 that makes an HTTP ``POST`` request::
 
-    <input type="hidden" value="{{ csrf_token() }}">
+    <input type="hidden" name="_csrf_token" value="{{ csrf_token() }}">
 
 If you have certain views that need to be excluded from this protection
 (perhaps they receive ``POST`` requests from a third-party site) you can use
