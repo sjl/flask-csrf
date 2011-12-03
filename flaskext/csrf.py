@@ -13,12 +13,13 @@ from uuid import uuid4
 from flask import abort, request, session, g
 from werkzeug.routing import NotFound
 
-
 _exempt_views = []
+
 
 def csrf_exempt(view):
     _exempt_views.append(view)
     return view
+
 
 def csrf(app, on_csrf=None):
     @app.before_request
@@ -31,6 +32,9 @@ def csrf(app, on_csrf=None):
     
     @app.before_request
     def _csrf_protect():
+        # This simplifies unit testing, wherein CSRF seems to break
+        if app.config.get('TESTING'):
+            return
         if not g._csrf_exempt:
             if request.method == "POST":
                 csrf_token = session.pop('_csrf_token', None)
@@ -45,5 +49,3 @@ def csrf(app, on_csrf=None):
         return session['_csrf_token']
     
     app.jinja_env.globals['csrf_token'] = generate_csrf_token
-
-
