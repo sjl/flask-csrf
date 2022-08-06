@@ -11,7 +11,7 @@
 
 from uuid import uuid4
 from flask import abort, request, session, g
-from werkzeug.routing import NotFound
+from werkzeug.exceptions import NotFound
 
 _exempt_views = []
 
